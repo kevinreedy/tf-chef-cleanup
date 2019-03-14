@@ -14,3 +14,9 @@ knife client list | grep kreedy_terraform_test
 ```
 
 `test.sh` in this repo automates the above steps, but doesn't have a lot error checking, so use at your own risk.
+
+## Notes
+
+Another option to this approach is to add `recreate_client = true` to your provisioner config. This will remove the Chef Node and Client objects if they already exist on a later `terraform apply`.
+
+This repo is just an example, so it makes assumptions around logging into AWS, Chef, etc.
